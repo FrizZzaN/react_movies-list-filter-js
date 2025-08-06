@@ -15,32 +15,30 @@ export const App = () => {
 
   return (
     <div className="page">
-      <div className="page">
-        <div className="page-content">
-          <div className="box">
-            <div className="field">
-              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-              <label htmlFor="search-query" className="label">
-                Search movie
-              </label>
+      <div className="page-content">
+        <div className="box">
+          <div className="field">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label htmlFor="search-query" className="label">
+              Search movie
+            </label>
 
-              <div className="control">
-                <input
-                  onChange={event => setQuery(event.target.value)}
-                  type="text"
-                  id="search-query"
-                  className="input"
-                  placeholder="Type search word"
-                />
-              </div>
+            <div className="control">
+              <input
+                onChange={event => setQuery(event.target.value)}
+                type="text"
+                id="search-query"
+                className="input"
+                placeholder="Type search word"
+              />
             </div>
           </div>
-
-          <MoviesList movies={visibleMovies} />
         </div>
 
-        <div className="sidebar">Sidebar goes here</div>
+        <MoviesList movies={visibleMovies} />
       </div>
+
+      <div className="sidebar">Sidebar goes here</div>
     </div>
   );
 };
