@@ -7,10 +7,9 @@ export const App = () => {
   const [query, setQuery] = useState('');
 
   const normalizedQuery = query.trim().toLowerCase();
+  const matchesQuery = text => text.toLowerCase().includes(normalizedQuery);
   const visibleMovies = moviesFromServer.filter(
-    movie =>
-      movie.title.toLowerCase().includes(normalizedQuery) ||
-      movie.description.toLowerCase().includes(normalizedQuery),
+    movie => matchesQuery(movie.title) || matchesQuery(movie.description),
   );
 
   return (
